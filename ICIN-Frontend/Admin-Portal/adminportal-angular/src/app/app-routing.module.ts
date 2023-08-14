@@ -19,6 +19,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'loan-requests',
+    component: LoanRequestsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'authorize',
     component: AuthorizeRegistrationComponent,
     canActivate: [AuthGuard],

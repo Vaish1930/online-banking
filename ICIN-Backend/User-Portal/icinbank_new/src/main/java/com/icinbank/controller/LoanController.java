@@ -19,7 +19,7 @@ import com.icinbank.service.LoanService;
 
 @RestController
 @RequestMapping("/loans")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+// @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LoanController {
 
     @Autowired

@@ -9,6 +9,8 @@ import { CheckbookRequest } from './model/checkbookRequest';
 export class CheckbookService {
   //readonly rootUrl = 'localhost:<port>/user/{username}/chequebook/request/confirm';
   readonly rootUrl = 'http://localhost:8080/user/';
+  readonly loanUrl = 'http://localhost:8081/loans';
+
   //readonly dataUrl= 'localhost:<port>/chequebook/request/all';
   readonly dataUrl = 'http://localhost:8080/chequebook/request/all';
   private data: any = [];
@@ -23,4 +25,9 @@ export class CheckbookService {
   getRequestsData(): Observable<CheckbookRequest[]> {
     return this.http.get<CheckbookRequest[]>(this.dataUrl);
   }
+
+  getLoans = () => this.http.get(this.loanUrl);
+
+  updateLoan = (id: number, loan: any) =>
+    this.http.put(`${this.loanUrl}/${id}`, loan);
 }

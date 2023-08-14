@@ -31,8 +31,11 @@ export class LoanRequestComponent {
 
   loanRequestSubmitHandler = async () => {
     try {
+      const userId = parseInt(localStorage.getItem('userId'));
       console.log(this.loanForm.value);
-      await this.requestService.addLoan(this.loanForm.value).toPromise();
+      await this.requestService
+        .addLoan({ ...this.loanForm.value, loanStatus: 'Pending' }, userId)
+        .toPromise();
       Swal.fire({
         icon: 'success',
         title: 'Loan request placed!',

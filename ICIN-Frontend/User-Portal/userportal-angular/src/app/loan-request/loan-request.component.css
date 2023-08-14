@@ -1,7 +1,8 @@
 .loanWrapper {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 100%;
+  max-width: 500px;
   margin: 40px auto;
   gap: 10px;
 }

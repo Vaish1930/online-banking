@@ -22,7 +22,10 @@ export class RequestService {
     );
   }
 
-  addLoan(loan: any) {
-    return this.http.post<ChequebookResponse>(`${this.rootUrl}/loans`, loan);
+  addLoan(loan: any, userId: number) {
+    return this.http.post<ChequebookResponse>(
+      `${this.rootUrl}/loans/${userId}`,
+      loan
+    );
   }
 }
